@@ -1,0 +1,3 @@
+﻿  thread.cpp
+F:\Игорь\C++\thread\thread.cpp(20,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  thread.vcxproj -> F:\Игорь\C++\thread\x64\Debug\thread.exe
