@@ -1,9 +1,9 @@
-﻿#include <iostream>
+#include <iostream>
 #include <thread>
 #include "Printer.hpp"
 #include <vector>
 #include <list>
-#include <algorithm>
+#include <algorithm>//std::sort
 #include <cstdlib>
 #include <windows.h>
 
@@ -22,6 +22,7 @@ int main()
 
 	std::vector<int> vector(10);
 	
+
 	std::list<int> list(10);
 
 	for (auto& el : vector)
@@ -31,19 +32,17 @@ int main()
 	for (auto& el : list)
 		el = ::rand() % 20;
 
-	std::cout << "Вектор: ";
+	
 	std::thread thread_vector([&vector, &printer]()
 	{
 		std::sort(vector.begin(), vector.end());//сортируем
 		printer.Print(vector);
-	});;
+	});
 	
 
 
 	
 
-	std::cout << "Список: ";
-	list.sort();
 	std::thread thread_list([&list, &printer]()//лямбда выражение
 		{
 			list.sort();
