@@ -10,7 +10,7 @@ public:
 	
 
 private:
-	std::mutex mtx;
+	std::mutex mutex;
 };
 
 
@@ -18,14 +18,14 @@ private:
 #endif //
 
 template<typename T>
-inline void Printer::Print(T collection)//vs создает тело метода здесь
+inline void Printer::Print(T collection)//vs Г±Г®Г§Г¤Г ГҐГІ ГІГҐГ«Г® Г¬ГҐГІГ®Г¤Г  Г§Г¤ГҐГ±Гј
 {
-	mtx.lock();
+	mutex.lock();
 
 	for (auto& el : collection)
 		std::cout << el << ' ';
 
 	std::cout << std::endl;
 
-	mtx.unlock();
+	mutex.unlock();
 }
